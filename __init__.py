@@ -35,9 +35,10 @@ def monhistp():
   
 @app.route('/commits/')
 def commits():
+    import json as jsonlib
     url = "https://api.github.com/repos/OpenRSI/5MCSI_Metriques/commits"
     response = urlopen(url)
-    data = json.loads(response.read().decode())
+    data = jsonlib.loads(response.read().decode())
 
     minute_list = []
     for item in data:
