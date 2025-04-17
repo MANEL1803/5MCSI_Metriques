@@ -2,95 +2,107 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Contactez Manel MOKRAB</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to right, #e0eafc, #cfdef3);
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <title>Contact | Manel MOKRAB</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+      margin: 0;
+      padding: 0;
+    }
 
-        .container {
-            max-width: 600px;
-            margin: 80px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-        }
+    .container {
+      max-width: 600px;
+      margin: 80px auto;
+      background-color: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
 
-        h2 {
-            text-align: center;
-            color: #333;
-        }
+    h2 {
+      text-align: center;
+      color: #c2185b;
+      margin-bottom: 30px;
+    }
 
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
 
-        label {
-            font-weight: bold;
-            color: #555;
-        }
+    label {
+      font-weight: bold;
+      color: #880e4f;
+    }
 
-        input, textarea {
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-        }
+    input, textarea {
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #f48fb1;
+      font-size: 16px;
+      background-color: #fff0f5;
+      transition: 0.3s;
+    }
 
-        input:focus, textarea:focus {
-            border-color: #0077cc;
-            outline: none;
-        }
+    input:focus, textarea:focus {
+      border-color: #ec407a;
+      box-shadow: 0 0 6px #f8bbd0;
+      outline: none;
+    }
 
-        button {
-            background-color: #0077cc;
-            color: white;
-            padding: 12px;
-            font-size: 16px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+    button {
+      background-color: #ec407a;
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
 
-        button:hover {
-            background-color: #005fa3;
-        }
+    button:hover {
+      background-color: #d81b60;
+    }
 
-        .footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
-            color: #777;
-        }
-    </style>
+    .footer {
+      text-align: center;
+      margin-top: 25px;
+      font-size: 14px;
+      color: #a1887f;
+    }
+
+    .hearts {
+      text-align: center;
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: #f06292;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Contactez Manel MOKRAB</h2>
-        <form method="POST">
-            <div>
-                <label for="prenom">Prénom :</label>
-                <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
-            </div>
-            <div>
-                <label for="nom">Nom :</label>
-                <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
-            </div>
-            <div>
-                <label for="message">Message :</label>
-                <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
-            </div>
-            <button type="submit">Envoyer</button>
-        </form>
-        <div class="footer">Merci pour votre message 💌</div>
-    </div>
+  <div class="container">
+    <div class="hearts">💖 💌 🌸</div>
+    <h2>Contactez Manel MOKRAB</h2>
+    <form method="POST">
+      <div>
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+      </div>
+      <div>
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+      </div>
+      <div>
+        <label for="message">Message :</label>
+        <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
+      </div>
+      <button type="submit">Envoyer 💬</button>
+    </form>
+    <div class="footer">Merci de m'avoir écrit 💕</div>
+  </div>
 </body>
 </html>
