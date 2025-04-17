@@ -5,6 +5,7 @@ from datetime import datetime
 from collections import Counter
 from urllib.request import urlopen
 import sqlite3
+import json
                                                                                                                                        
 app = Flask(__name__)  
 @app.route('/')
@@ -38,7 +39,7 @@ def monhistp():
 def commits():
     url = "https://api.github.com/repos/OpenRSI/5MCSI_Metriques/commits"
     response = urlopen(url)
-    data = jsonlib.loads(response.read().decode())
+    data = json.loads(response.read().decode())  # Correction ici
 
     minute_list = []
     for item in data:
