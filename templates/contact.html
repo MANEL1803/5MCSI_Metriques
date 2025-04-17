@@ -39,12 +39,20 @@
     }
 
     input, textarea {
+      width: 100%;
       padding: 12px;
       border-radius: 10px;
       border: 1px solid #f48fb1;
       font-size: 16px;
       background-color: #fff0f5;
       transition: 0.3s;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+      max-height: 200px;
     }
 
     input:focus, textarea:focus {
@@ -98,7 +106,7 @@
       </div>
       <div>
         <label for="message">Message :</label>
-        <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
+        <textarea id="message" name="message" placeholder="Votre message..." required></textarea>
       </div>
       <button type="submit">Envoyer 💬</button>
     </form>
@@ -106,3 +114,4 @@
   </div>
 </body>
 </html>
+
