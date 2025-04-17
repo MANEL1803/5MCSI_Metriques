@@ -2,6 +2,7 @@ from flask import Flask, render_template_string, render_template, jsonify
 from flask import render_template
 from flask import json
 from datetime import datetime
+from collections import Counter
 from urllib.request import urlopen
 import sqlite3
                                                                                                                                        
@@ -35,7 +36,6 @@ def monhistp():
   
 @app.route('/commits/')
 def commits():
-    import json as jsonlib
     url = "https://api.github.com/repos/OpenRSI/5MCSI_Metriques/commits"
     response = urlopen(url)
     data = jsonlib.loads(response.read().decode())
