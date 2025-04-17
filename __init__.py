@@ -32,6 +32,7 @@ def mongraphique():
 @app.route("/histo/")
 def monhistp():
     return render_template("histogramme.html")
+  
 @app.route('/commits/')
 def commits():
     url = "https://api.github.com/repos/OpenRSI/5MCSI_Metriques/commits"
@@ -49,7 +50,6 @@ def commits():
 
     return jsonify(results=chart_data)
 
-# === ROUTE HTML DU GRAPHIQUE ===
 @app.route('/commits-graphique/')
 def graph_commits():
     return render_template('commits.html')
