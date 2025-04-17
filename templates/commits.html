@@ -4,10 +4,28 @@
     <meta charset="utf-8" />
     <title>Graphique des Commits</title>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 30px;
+        background-color: #f8f8f8;
+      }
+
+      h2 {
+        text-align: center;
+        color: #333;
+      }
+
+      #chart_div {
+        width: 80%;
+        height: 500px;
+        margin: 40px auto;
+      }
+    </style>
   </head>
   <body>
-    <h2 style="text-align:center;">Commits par minute</h2>
-    <div id="chart_div" style="width: 900px; height: 500px; margin: auto;"></div>
+    <h2>Commits par minute</h2>
+    <div id="chart_div"></div>
 
     <script>
       google.charts.load('current', { packages: ['corechart'] });
@@ -17,25 +35,38 @@
         fetch('/commits/')
           .then(response => response.json())
           .then(data => {
-            var dataTable = new google.visualization.DataTable();
+            const results = data.results;
+
+            if (results.length === 0) {
+              document.getElementById('chart_div').innerHTML = 'Aucun commit trouvé.';
+              return;
+            }
+
+            const dataTable = new google.visualization.DataTable();
             dataTable.addColumn('string', 'Minute');
             dataTable.addColumn('number', 'Commits');
 
-            data.results.forEach(item => {
+            results.forEach(item => {
               dataTable.addRow([item.minute, item.count]);
             });
 
-            var options = {
+            const options = {
               title: 'Nombre de commits par minute',
-              legend: { position: 'none' },
               hAxis: { title: 'Minute' },
-              vAxis: { title: 'Commits' }
+              vAxis: { title: 'Commits', minValue: 0 },
+              legend: 'none',
+              colors: ['#FF4081'] // Rose 😄
             };
 
-            var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+            const chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
             chart.draw(dataTable, options);
+          })
+          .catch(error => {
+            console.error('Erreur de chargement des données :', error);
+            document.getElementById('chart_div').innerHTML = 'Erreur de chargement du graphique.';
           });
       }
     </script>
   </body>
 </html>
+
